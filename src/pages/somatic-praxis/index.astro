@@ -4,7 +4,7 @@ import Layout from '../../layouts/Layout.astro';
 ---
 
 <Layout 
-  title="Hub IV: Somatic Praxis | Anuhazi"
+  title="Hub IV: Somatic Praxis"
   description="The execution of the Work. Transcend the theoretical exhaust. Apply strict thermodynamic friction to bridge the Mi-Fa interval, seal biological leaks, and intentionally sound the Source Code."
 >
   <div class="site-wrapper section theme-void" style="padding-top: 20px; padding-bottom: 80px;">
@@ -28,7 +28,7 @@ import Layout from '../../layouts/Layout.astro';
     </header>
 
     <!-- Context / Callout Aside (The Thermodynamic Interval) -->
-    <section class="reveal reveal-delay-1 central-aside-wrapper">
+    <section class="anu-container reveal reveal-delay-1 central-aside-wrapper">
       <aside class="anu-terminal anu-terminal-gold">
         <h2>The Thermodynamic Interval</h2>
         <p>
@@ -46,7 +46,7 @@ import Layout from '../../layouts/Layout.astro';
       <!-- Node 4.1 -->
       <article class="anu-card anu-card-gold">
         <span class="anu-eyebrow eyebrow-gold">Node 4.1</span>
-        <h3>The Fast of Words</h3>
+        <h3 class="node-title">The Fast of Words</h3>
         <p class="card-text">
           Diagnose the acoustic leakage. Implement the primary kinetic block against the Archontic matrix by entirely suspending mechanical speech, starving the parasite of its Loosh dividend.
         </p>
@@ -56,7 +56,7 @@ import Layout from '../../layouts/Layout.astro';
       <!-- Node 4.2 -->
       <article class="anu-card anu-card-gold">
         <span class="anu-eyebrow eyebrow-gold">Node 4.2</span>
-        <h3>The Kesdjan Synthesizer</h3>
+        <h3 class="node-title">The Kesdjan Synthesizer</h3>
         <p class="card-text">
           Coagulate the internal voltage. Utilize intentional suffering and conscious labor to route Hanbledzoin into the localized nerve nodes, physically crystallizing the immortal Astral hardware.
         </p>
@@ -66,7 +66,7 @@ import Layout from '../../layouts/Layout.astro';
       <!-- Node 4.3 -->
       <article class="anu-card anu-card-gold">
         <span class="anu-eyebrow eyebrow-gold">Node 4.3</span>
-        <h3>Sounding the Source Code</h3>
+        <h3 class="node-title">Sounding the Source Code</h3>
         <p class="card-text">
           Execute the localized override. Deploy exact numeric ciphers, vibratory permutations, and scalar chanting to manually rewrite the DNA antenna and command the Demiurgic gatekeepers to withdraw.
         </p>
@@ -75,15 +75,70 @@ import Layout from '../../layouts/Layout.astro';
 
     </div>
 
-    <hr class="anu-divider central-divider reveal reveal-delay-3" />
+    <!-- Divider (Bounded) -->
+    <div class="anu-container reveal reveal-delay-3">
+      <hr class="anu-divider central-divider" />
+    </div>
 
     <!-- Hub Transit Link (Pleromic Extraction Protocol / Silver Theme) -->
-    <nav class="reveal reveal-delay-3 anu-hub-transition">
-      <span class="anu-eyebrow eyebrow-silver">The Deep-Mind Archive</span>
-      <a href="/the-pleromic-extraction/" class="anu-btn anu-btn-ghost-silver">
-        Access the Pleromic Extraction Protocol &rarr;
-      </a>
+    <nav class="anu-container reveal reveal-delay-3">
+      <div class="anu-hub-transition">
+        <span class="anu-eyebrow eyebrow-silver">The Deep-Mind Archive</span>
+        <a href="/the-pleromic-extraction/" class="anu-btn anu-btn-ghost-silver">
+          Access the Pleromic Extraction Protocol &rarr;
+        </a>
+      </div>
     </nav>
 
   </div>
 </Layout>
+
+<style>
+  /* Baseline alignment for card titles across differing line wraps */
+  .node-title {
+    min-height: 4rem;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  /* Grid spacing cushion */
+  .grid-spacing-bottom {
+    margin-bottom: 40px;
+  }
+
+  /* Terminal inner paragraph reset */
+  .spacing-bottom-none {
+    margin-bottom: 0;
+  }
+
+  /* Bottom transit bar flex alignment */
+  .anu-hub-transition {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 10px;
+  }
+
+  .anu-hub-transition .anu-eyebrow {
+    margin-bottom: 0;
+  }
+
+  /* Responsive stacking for smaller screens */
+  @media (max-width: 768px) {
+    .node-title {
+      min-height: auto;
+    }
+
+    .anu-hub-transition {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    .anu-hub-transition .anu-btn {
+      width: 100%;
+    }
+  }
+</style>
