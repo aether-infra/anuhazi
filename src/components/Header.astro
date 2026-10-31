@@ -1,0 +1,220 @@
+---
+// src/components/Header.astro
+export interface Props {
+  logoTitle?: string;
+  logoSubtitle?: string;
+  currentPath?: string;
+}
+
+const { 
+  logoTitle = "Anuhazi", 
+  logoSubtitle = "The Root Code",
+  currentPath = Astro.url.pathname 
+} = Astro.props;
+
+const navItems = [
+  { href: "/acoustic-cybernetics/", label: "Hub I", themeClass: "link-gold" },
+  { href: "/the-babel-virus/", label: "Hub II", themeClass: "link-copper" },
+  { href: "/wave-genetics/", label: "Hub III", themeClass: "link-gold" },
+];
+
+const isActive = (path: string) => {
+  if (path === "/") return currentPath === "/" || currentPath === "";
+  return currentPath.startsWith(path);
+};
+---
+
+<header class="anu-site-header">
+  <div class="anu-container anu-header-container">
+    
+    <div class="anu-logo">
+      <a href="/">
+        <img 
+          src="/ANUHAZI_LOGO.webp" 
+          alt="Anuhazi Pleromic Mandala" 
+          class="anu-logo-icon" 
+          width="40" 
+          height="40" 
+          loading="eager"
+          decoding="async"
+        />
+        <span class="anu-logo-text">
+          {logoTitle} 
+          <span>{logoSubtitle}</span>
+        </span>
+      </a>
+    </div>
+    
+    <nav class="anu-nav" aria-label="Primary Matrix Navigation">
+      <ul>
+        {navItems.map((item) => (
+          <li>
+            <a 
+              href={item.href} 
+              class={`anu-nav-link ${item.themeClass} ${isActive(item.href) ? 'active' : ''}`}
+              aria-current={isActive(item.href) ? "page" : undefined}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+        <li>
+          <a 
+            href="/somatic-praxis/" 
+            class={`anu-nav-btn ${isActive('/somatic-praxis/') ? 'active' : ''}`}
+            aria-current={isActive('/somatic-praxis/') ? "page" : undefined}
+          >
+            Praxis
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+<style>
+  .anu-site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(5, 10, 18, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+    padding: 14px 0;
+  }
+
+  .anu-header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .anu-logo a {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+  }
+
+  .anu-logo-icon {
+    display: block;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 8px rgba(197, 160, 89, 0.35));
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+
+  .anu-logo a:hover .anu-logo-icon {
+    transform: rotate(30deg) scale(1.05);
+    filter: drop-shadow(0 0 12px rgba(197, 160, 89, 0.6));
+  }
+
+  .anu-logo-text {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-heading, 'Cinzel', serif);
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--anu-gold, #c5a059);
+    line-height: 1.1;
+  }
+
+  .anu-logo-text span {
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 2.2px;
+    color: var(--anu-silver, #a8b2c1);
+    margin-top: 3px;
+  }
+
+  .anu-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+  }
+
+  .anu-nav-link {
+    font-family: var(--font-heading, 'Cinzel', serif);
+    font-size: 0.88rem;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 6px 4px;
+    position: relative;
+    transition: color 0.2s ease;
+  }
+
+  .link-gold {
+    color: var(--anu-silver, #a8b2c1);
+  }
+
+  .link-gold:hover,
+  .link-gold.active {
+    color: var(--anu-gold, #c5a059);
+    text-shadow: 0 0 10px rgba(197, 160, 89, 0.5);
+  }
+
+  .link-copper {
+    color: var(--anu-silver, #a8b2c1);
+  }
+
+  .link-copper:hover,
+  .link-copper.active {
+    color: var(--anu-copper, #c87d55);
+    text-shadow: 0 0 10px rgba(200, 125, 85, 0.5);
+  }
+
+  .anu-nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 1.5px;
+    background: currentColor;
+    box-shadow: 0 0 8px currentColor;
+  }
+
+  .anu-nav-btn {
+    font-family: var(--font-heading, 'Cinzel', serif);
+    font-size: 0.82rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 7px 18px;
+    color: var(--anu-gold, #c5a059);
+    background: rgba(197, 160, 89, 0.05);
+    border: 1px solid var(--anu-gold, #c5a059);
+    border-radius: 2px;
+    transition: all 0.25s ease;
+  }
+
+  .anu-nav-btn:hover,
+  .anu-nav-btn.active {
+    background: var(--anu-gold, #c5a059);
+    color: var(--anu-void, #050a12);
+    box-shadow: 0 0 16px rgba(197, 160, 89, 0.45);
+  }
+
+  @media (max-width: 768px) {
+    .anu-nav ul {
+      gap: 12px;
+    }
+    .anu-logo-text span {
+      display: none;
+    }
+    .anu-nav-btn {
+      padding: 6px 12px;
+      font-size: 0.75rem;
+    }
+  }
+</style>

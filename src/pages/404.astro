@@ -1,0 +1,76 @@
+---
+// src/pages/404.astro
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="404: Signal Dissolution | Anuhazi"
+  description="Coordinates unresolved in the Athanor. The acoustic frequency or path coordinate does not exist within this quadrant of the root structure."
+>
+  <main class="site-wrapper section theme-void anu-404-wrapper">
+    <section class="anu-container anu-container-narrow reveal" style="text-align: center;">
+      
+      <span class="anu-eyebrow eyebrow-copper">Error 404 // Signal Dissolution</span>
+      
+      <h1 class="anu-404-code">404</h1>
+      <p class="anu-hero-subtitle" style="color: var(--anu-silver, #a8b2c1); margin-top: -10px;">
+        Coordinates Unresolved in the Athanor
+      </p>
+
+      <div class="anu-terminal anu-terminal-copper" style="text-align: left; max-width: 650px; margin: 36px auto;">
+        <h3>Conduit Disruption Notice</h3>
+        <p style="margin-bottom: 0;">
+          The acoustic frequency or path coordinate you attempted to access does not exist within this quadrant of the root structure. The node may have been re-indexed, moved, or dissolved back into the void.
+        </p>
+      </div>
+
+      <div class="anu-hero-buttons">
+        <a href="/" class="anu-btn anu-btn-ghost-copper">Return to Root Void</a>
+        <a href="/somatic-praxis/" class="anu-btn anu-btn-ghost-silver">Explore Somatic Praxis</a>
+      </div>
+
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .anu-404-wrapper {
+    min-height: calc(100vh - 260px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+
+  .anu-404-code {
+    font-size: clamp(5rem, 16vw, 9.5rem);
+    color: var(--anu-copper, #c87d55);
+    line-height: 1;
+    margin: 10px 0 0 0;
+    letter-spacing: 6px;
+    font-weight: 700;
+    font-family: var(--font-heading, 'Cinzel', serif);
+    text-shadow: 0 0 35px rgba(200, 125, 85, 0.45);
+  }
+
+  .anu-hero-buttons {
+    display: inline-flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 36px;
+  }
+
+  @media (max-width: 640px) {
+    .anu-hero-buttons {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .anu-hero-buttons .anu-btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+</style>

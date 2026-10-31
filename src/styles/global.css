@@ -1,0 +1,734 @@
+/* ==========================================================================
+   ANUHAZI ROOT PLEROMIC CODE: GLOBAL MASTER SHEET (ASTRO STATIC ENGINE)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. VARIABLES (THE GLOBAL STYLE TOKENS)
+   -------------------------------------------------------------------------- */
+   :root {
+    /* Backgrounds */
+    --anu-void-absolute: #050A12;
+    --anu-void-glass: rgba(5, 10, 18, 0.85);
+    --anu-void-card: rgba(10, 15, 25, 0.95);
+  
+    /* Typography Colors */
+    --anu-parchment: #E6E6E6;
+    --anu-silver: #B0B8C0;
+    --anu-silver-dim: rgba(176, 184, 192, 0.1);
+    --anu-muted: #888888;
+  
+    /* Accents & Glows */
+    --anu-gold: #C6A664;
+    --anu-gold-dim: rgba(198, 166, 100, 0.15);
+    --anu-gold-glow: rgba(198, 166, 100, 0.4);
+    
+    --anu-copper: #C97A6A;
+    --anu-copper-dim: rgba(201, 122, 106, 0.15);
+    --anu-copper-glow: rgba(201, 122, 106, 0.4);
+  
+    /* Typography Fonts */
+    --font-headers: 'Cinzel', serif;
+    --font-body: 'Montserrat', sans-serif;
+    
+    /* Structural Spacing */
+    --space-unit: clamp(20px, 4vw, 40px);
+  }
+  
+  /* --------------------------------------------------------------------------
+     2. BASE RESETS & NORMALIZATION
+     -------------------------------------------------------------------------- */
+  html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    background-color: var(--anu-void-absolute);
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--anu-void-absolute);
+    color: var(--anu-parchment);
+    font-family: var(--font-body);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #content-conduit {
+    flex: 1 0 auto;
+  }
+  
+  /* --------------------------------------------------------------------------
+     3. TYPOGRAPHY & GLOBAL LINKS
+     -------------------------------------------------------------------------- */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-headers);
+    color: var(--anu-gold);
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+  
+  h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  h2 { font-size: clamp(2rem, 4vw, 3rem); }
+  h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+  
+  p {
+    color: var(--anu-parchment);
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    margin-bottom: 25px;
+  }
+  
+  a {
+    color: var(--anu-gold);
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+  
+  a:hover {
+    color: var(--anu-parchment);
+    text-shadow: 0 0 10px var(--anu-gold-glow);
+  }
+  
+  .anu-eyebrow {
+    display: inline-block;
+    font-size: clamp(0.75rem, 2vw, 0.9rem);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+  
+  .eyebrow-gold { color: var(--anu-gold); }
+  .eyebrow-copper { color: var(--anu-copper); }
+  .eyebrow-silver { color: var(--anu-silver); }
+  
+  .card-text, .card-description {
+    color: var(--anu-silver);
+    flex-grow: 1;
+    margin-bottom: 30px;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  /* --------------------------------------------------------------------------
+     4. CONTAINERS, GRIDS, & LAYOUT UTILITIES
+     -------------------------------------------------------------------------- */
+  .anu-container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 var(--space-unit);
+  }
+  
+  .anu-container-narrow {
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 var(--space-unit);
+  }
+  
+  .anu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-unit);
+  }
+  
+  .anu-divider {
+    border: 0;
+    border-top: 1px solid var(--anu-gold-dim);
+    margin: 60px 0;
+    width: 100%;
+  }
+  
+  .divider-silver { border-top-color: var(--anu-silver-dim); }
+  .divider-copper { border-top-color: var(--anu-copper-dim); }
+  
+  /* --------------------------------------------------------------------------
+     5. NAVIGATION & WAYFINDING
+     -------------------------------------------------------------------------- */
+  .anu-site-header {
+    background: var(--anu-void-glass);
+    border-bottom: 1px solid var(--anu-gold-dim);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  
+  .anu-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .anu-logo a {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    font-family: var(--font-headers);
+    font-size: 1.5rem;
+    color: var(--anu-gold);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    line-height: 1.1;
+  }
+  
+  .anu-logo-icon {
+    height: 36px;
+    width: 36px;
+    max-height: 36px;
+    max-width: 36px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  
+  .anu-logo a:hover .anu-logo-icon {
+    transform: rotate(6deg) scale(1.05);
+  }
+  
+  .anu-logo span {
+    font-size: 0.75rem;
+    color: var(--anu-silver);
+    display: block;
+    letter-spacing: 2px;
+  }
+  
+  .anu-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(15px, 2vw, 30px);
+    align-items: center;
+    font-family: var(--font-headers);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+  
+  /* Navigation Hover & Active States */
+  .anu-nav-link {
+    color: var(--anu-parchment);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    position: relative;
+  }
+  
+  .anu-nav-link.link-gold:hover,
+  .anu-nav-link.link-gold.active { 
+    color: var(--anu-gold); 
+    text-shadow: 0 0 10px var(--anu-gold-glow);
+  }
+  
+  .anu-nav-link.link-copper:hover,
+  .anu-nav-link.link-copper.active { 
+    color: var(--anu-copper); 
+    text-shadow: 0 0 10px var(--anu-copper-glow);
+  }
+  
+  /* Active Link Underline */
+  .anu-nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: currentColor;
+    box-shadow: 0 0 8px currentColor;
+  }
+  
+  .anu-nav-btn {
+    color: var(--anu-gold);
+    border: 1px solid var(--anu-gold);
+    padding: 8px 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .anu-nav-btn:hover {
+    background-color: var(--anu-gold);
+    color: var(--anu-void-absolute);
+  }
+  
+  /* Breadcrumb Bar */
+  .anu-wayfinding-conduit {
+    margin-top: 40px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 var(--space-unit);
+  }
+  
+  .breadcrumb-trail {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-family: var(--font-headers);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+  }
+  
+  .breadcrumb-trail a { color: var(--anu-gold); }
+  .breadcrumb-trail a:hover { color: var(--anu-parchment); }
+  .breadcrumb-trail .separator { color: var(--anu-muted); }
+  .breadcrumb-trail .current-node { color: var(--anu-parchment); }
+  
+  /* --------------------------------------------------------------------------
+     6. CARDS & PLEROMIC EXTRACTIONS
+     -------------------------------------------------------------------------- */
+  .anu-card {
+    background: var(--anu-void-card);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+  }
+  
+  .anu-card-link {
+    text-transform: uppercase;
+    font-family: var(--font-headers);
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding-bottom: 3px;
+    align-self: flex-start;
+    transition: color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .anu-card-gold {
+    border: 1px solid var(--anu-gold-dim);
+    border-top: 3px solid var(--anu-gold);
+  }
+  
+  .anu-card-gold:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px var(--anu-gold-dim);
+  }
+  
+  .anu-card-gold .anu-card-link {
+    color: var(--anu-gold);
+    border-bottom: 1px solid var(--anu-gold);
+  }
+  
+  .anu-card-copper {
+    border: 1px solid var(--anu-copper-dim);
+    border-top: 3px solid var(--anu-copper);
+  }
+  
+  .anu-card-copper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px var(--anu-copper-dim);
+  }
+  
+  .anu-card-copper .anu-card-link {
+    color: var(--anu-copper);
+    border-bottom: 1px solid var(--anu-copper);
+  }
+  
+  .anu-extract-card {
+    border-left: 4px solid var(--anu-gold);
+    background: rgba(198, 166, 100, 0.05);
+    padding: 40px;
+    margin-bottom: 40px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .anu-extract-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px var(--anu-gold-dim);
+  }
+  
+  .anu-extract-badge {
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    background: var(--anu-void-absolute);
+    padding: 0 15px;
+    border: 1px solid var(--anu-gold);
+    color: var(--anu-gold);
+    font-family: var(--font-headers);
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  
+  /* --------------------------------------------------------------------------
+     7. CORE STRUCTURES: TERMINALS & BLOCKQUOTES
+     -------------------------------------------------------------------------- */
+  .anu-terminal {
+    background: var(--anu-void-glass);
+    padding: var(--space-unit);
+    margin: 40px 0;
+    position: relative;
+  }
+  
+  .anu-terminal h2, .anu-terminal h3 {
+    font-family: var(--font-headers);
+    margin-top: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.4rem;
+    padding-bottom: 15px;
+  }
+  
+  .anu-terminal-gold {
+    border: 1px solid var(--anu-gold);
+    box-shadow: inset 0 0 20px var(--anu-gold-dim);
+  }
+  
+  .anu-terminal-gold h2, .anu-terminal-gold h3 {
+    color: var(--anu-gold);
+    border-bottom: 1px solid var(--anu-gold-dim);
+  }
+  
+  .anu-terminal-silver {
+    border: 1px solid var(--anu-silver);
+    box-shadow: inset 0 0 20px rgba(176, 184, 192, 0.1);
+  }
+  
+  .anu-terminal-copper {
+    border: 1px solid var(--anu-copper);
+    box-shadow: inset 0 0 20px var(--anu-copper-dim);
+  }
+  
+  .anu-terminal-list {
+    color: var(--anu-parchment);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 0;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .anu-blockquote {
+    margin: 30px 0;
+    padding: 20px 30px;
+    background: var(--anu-void-glass);
+    font-family: var(--font-headers);
+    font-size: 1.15rem;
+    font-style: italic;
+    line-height: 1.8;
+  }
+  
+  .anu-blockquote-gold {
+    border-left: 4px solid var(--anu-gold);
+    color: var(--anu-gold);
+    box-shadow: inset 0 0 15px var(--anu-gold-dim);
+  }
+  
+  .anu-blockquote-copper {
+    border-left: 4px solid var(--anu-copper);
+    color: var(--anu-copper);
+    box-shadow: inset 0 0 15px var(--anu-copper-dim);
+  }
+  
+  /* --------------------------------------------------------------------------
+     8. BUTTONS
+     -------------------------------------------------------------------------- */
+  .anu-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    font-family: var(--font-headers);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+  }
+  
+  .anu-btn-primary {
+    background: var(--anu-gold);
+    color: var(--anu-void-absolute);
+    border: 1px solid var(--anu-gold);
+  }
+  
+  .anu-btn-primary:hover {
+    background: transparent;
+    color: var(--anu-gold);
+    box-shadow: inset 0 0 15px var(--anu-gold-dim);
+  }
+  
+  .anu-btn-ghost {
+    background: transparent;
+    color: var(--anu-gold);
+    border: 1px solid var(--anu-gold);
+  }
+  
+  .anu-btn-ghost:hover {
+    background: var(--anu-gold);
+    color: var(--anu-void-absolute);
+  }
+  
+  .anu-btn-ghost-copper {
+    background: transparent;
+    color: var(--anu-copper);
+    border: 1px solid var(--anu-copper);
+  }
+  
+  .anu-btn-ghost-copper:hover {
+    background: var(--anu-copper);
+    color: var(--anu-void-absolute);
+    box-shadow: 0 0 15px var(--anu-copper-dim);
+  }
+  
+  .anu-btn-ghost-silver {
+    background: transparent;
+    color: var(--anu-silver);
+    border: 1px solid var(--anu-silver);
+  }
+  
+  .anu-btn-ghost-silver:hover {
+    background: rgba(176, 184, 192, 0.1);
+    color: #ffffff;
+    border-color: #ffffff;
+    box-shadow: 0 0 15px rgba(176, 184, 192, 0.2);
+  }
+  
+  /* --------------------------------------------------------------------------
+     8.5 ARTICLE ENTRY CONTENT
+     -------------------------------------------------------------------------- */
+  .anu-article-body {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--space-unit);
+  }
+  
+  .entry-content p {
+    line-height: 1.85;
+    margin-bottom: 30px;
+  }
+  
+  .entry-content h2 {
+    margin-top: 50px;
+    margin-bottom: 25px;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    border-bottom: 1px solid rgba(198, 166, 100, 0.2);
+    padding-bottom: 15px;
+  }
+  
+  /* Pagination within nodes */
+  .anu-article-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 60px;
+  }
+  
+  .anu-pagination-back {
+    font-family: var(--font-headers);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.85rem;
+    color: var(--anu-silver);
+  }
+  
+  .anu-pagination-back:hover {
+    color: var(--anu-parchment);
+  }
+  
+  /* --------------------------------------------------------------------------
+     9. HERO & HEADER PATTERNS
+     -------------------------------------------------------------------------- */
+  .anu-hero {
+    padding: clamp(80px, 15vw, 150px) 0;
+    text-align: center;
+    border-bottom: 1px solid var(--anu-gold-dim);
+  }
+  
+  .anu-hub-hero {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px var(--space-unit) 40px;
+    text-align: center;
+  }
+  
+  .anu-article-hero {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px var(--space-unit) 50px;
+    text-align: center;
+  }
+  
+  .hero-italic-title {
+    display: inline-block;
+    font-style: italic;
+    color: var(--anu-parchment);
+    margin-top: 10px;
+  }
+  
+  .anu-hero-subtitle {
+    color: var(--anu-silver);
+    font-size: clamp(1.2rem, 3vw, 1.4rem);
+    font-family: var(--font-headers);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+  }
+  
+  .anu-hero-description, .hero-description-wide {
+    color: var(--anu-parchment);
+    font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    line-height: 1.8;
+  }
+  
+  .hero-description-wide {
+    max-width: 900px;
+  }
+  
+  .anu-hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  /* --------------------------------------------------------------------------
+     10. GLOBAL FOOTER
+     -------------------------------------------------------------------------- */
+  .anu-site-footer {
+    background-color: var(--anu-void-absolute);
+    border-top: 1px solid var(--anu-gold-dim);
+    padding: 80px 0 40px 0;
+    margin-top: auto;
+  }
+  
+  .anu-footer-branding {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .anu-footer-branding h4 {
+    font-family: var(--font-headers);
+    color: var(--anu-silver);
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+  }
+  
+  .anu-footer-branding p {
+    color: var(--anu-muted);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .anu-footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    border-top: 1px solid rgba(198, 166, 100, 0.15);
+    border-bottom: 1px solid rgba(198, 166, 100, 0.15);
+    padding: 40px 0;
+    margin-bottom: 40px;
+  }
+  
+  .anu-footer-column {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .anu-footer-title {
+    font-family: var(--font-headers);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+  
+  .title-gold { color: var(--anu-gold); }
+  .title-silver { color: var(--anu-silver); }
+  
+  .anu-footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .anu-footer-link {
+    color: var(--anu-muted);
+    transition: color 0.3s ease;
+  }
+  
+  .anu-footer-link:hover { color: var(--anu-parchment); }
+  .anu-footer-link-gold { color: var(--anu-gold); font-weight: bold; }
+  
+  .anu-footer-copyright {
+    text-align: center;
+  }
+  
+  .anu-footer-copyright span {
+    color: var(--anu-muted);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+  
+  /* --------------------------------------------------------------------------
+     11. SCROLL REVEAL ANIMATIONS
+     -------------------------------------------------------------------------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: opacity, transform;
+  }
+  
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .reveal-delay-1 { transition-delay: 0.2s; }
+  .reveal-delay-2 { transition-delay: 0.4s; }
+  .reveal-delay-3 { transition-delay: 0.6s; }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }

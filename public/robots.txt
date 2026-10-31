@@ -1,0 +1,5 @@
+# public/robots.txt
+# Anuhazi Archive — Open Conduit
+
+User-agent: *
+Allow: /

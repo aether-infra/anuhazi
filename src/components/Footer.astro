@@ -1,0 +1,193 @@
+---
+// src/components/Footer.astro
+---
+
+<footer class="anu-site-footer">
+  <div class="anu-container anu-footer-container">
+    
+    <!-- Branding Block -->
+    <div class="anu-footer-branding">
+      <h4>The Silent Athanor</h4>
+      <p>
+        This repository is an esoteric diagnostic tool. The Pleromic Root Code cannot be downloaded into a state of mechanical sleep. Extract the somatic blueprints, disconnect from the Archontic network, and execute the internal friction manually.
+      </p>
+    </div>
+
+    <!-- Navigation Column Grid -->
+    <div class="anu-footer-grid">
+      
+      <!-- Column 1: Core Matrix -->
+      <div class="anu-footer-column">
+        <span class="anu-footer-title title-gold">The Core Matrix</span>
+        <ul class="anu-footer-list">
+          <li><a href="/acoustic-cybernetics/" class="anu-footer-link link-hover-parchment">Hub I: Acoustic Cybernetics</a></li>
+          <li><a href="/the-babel-virus/" class="anu-footer-link link-hover-copper">Hub II: The Babel Virus</a></li>
+          <li><a href="/wave-genetics/" class="anu-footer-link link-hover-parchment">Hub III: Wave Genetics</a></li>
+          <li><a href="/somatic-praxis/" class="anu-footer-link link-hover-gold">Hub IV: Somatic Praxis</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 2: Deep-Mind Archive -->
+      <div class="anu-footer-column">
+        <span class="anu-footer-title title-silver">Deep-Mind Archive</span>
+        <ul class="anu-footer-list">
+          <li><a href="/archive-logs/" class="anu-footer-link link-hover-silver">Archive Directory Root</a></li>
+          <li><a href="/archive-logs/the-lyran-sirian-protocol/" class="anu-footer-link link-hover-silver">The Lyran-Sirian Protocol</a></li>
+          <li><a href="/archive-logs/advanced-loosh-mechanics/" class="anu-footer-link link-hover-silver">Advanced Loosh Mechanics</a></li>
+          <li><a href="/archive-logs/glossary-of-the-pleroma/" class="anu-footer-link link-hover-silver">Glossary of the Pleroma</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Execution Protocols -->
+      <div class="anu-footer-column">
+        <span class="anu-footer-title title-parchment">Execution Protocols</span>
+        <ul class="anu-footer-list">
+          <li><a href="/the-pleromic-extraction/" class="anu-footer-link-gold link-hover-parchment">The Pleromic Extraction</a></li>
+          <li><a href="/" class="anu-footer-link link-hover-parchment">Return to Grid (Home)</a></li>
+        </ul>
+      </div>
+
+    </div>
+    
+    <!-- Bottom License / Copyright Info -->
+    <div class="anu-footer-copyright">
+      <span>&copy; 2026 Anuhazi.com &middot; All Rights Reserved.</span>
+    </div>
+
+  </div>
+</footer>
+
+<style>
+  .anu-site-footer {
+    background: var(--anu-void-card, #09101d);
+    border-top: 1px solid rgba(197, 160, 89, 0.2);
+    padding: 60px 0 30px;
+    margin-top: auto;
+  }
+
+  .anu-footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .anu-footer-branding {
+    max-width: 640px;
+  }
+
+  .anu-footer-branding h4 {
+    font-family: var(--font-heading, 'Cinzel', serif);
+    font-size: 1.15rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--anu-gold, #c5a059);
+    margin: 0 0 12px 0;
+  }
+
+  .anu-footer-branding p {
+    color: var(--anu-silver, #a8b2c1);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .anu-footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 36px 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(168, 178, 193, 0.1);
+  }
+
+  .anu-footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .anu-footer-title {
+    font-family: var(--font-heading, 'Cinzel', serif);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .title-gold {
+    color: var(--anu-gold, #c5a059);
+  }
+
+  .title-silver {
+    color: var(--anu-silver, #a8b2c1);
+  }
+
+  .title-parchment {
+    color: var(--anu-parchment, #e6ded0);
+  }
+
+  .anu-footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .anu-footer-link,
+  .anu-footer-link-gold {
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    transition: color 0.2s ease;
+  }
+
+  .anu-footer-link {
+    color: var(--anu-silver, #a8b2c1);
+  }
+
+  .anu-footer-link-gold {
+    color: var(--anu-gold, #c5a059);
+  }
+
+  .link-hover-gold:hover {
+    color: var(--anu-gold, #c5a059);
+  }
+
+  .link-hover-copper:hover {
+    color: var(--anu-copper, #c87d55);
+  }
+
+  .link-hover-silver:hover {
+    color: #ffffff;
+  }
+
+  .link-hover-parchment:hover {
+    color: var(--anu-parchment, #e6ded0);
+  }
+
+  .anu-footer-copyright {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: rgba(168, 178, 193, 0.6);
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 640px) {
+    .anu-site-footer {
+      padding: 40px 0 24px;
+    }
+
+    .anu-footer-container {
+      gap: 32px;
+    }
+
+    .anu-footer-grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+  }
+</style>
