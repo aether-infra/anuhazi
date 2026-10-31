@@ -5,9 +5,14 @@
 <footer class="anu-site-footer">
   <div class="anu-container anu-footer-container">
     
-    <!-- Branding Block -->
+    <!-- Centered Crucible Branding Block -->
     <div class="anu-footer-branding">
-      <h4>The Silent Athanor</h4>
+      <div class="athanor-seal">
+        <span class="athanor-glyph" aria-hidden="true">&#9672;</span>
+        <h4>The Silent Athanor</h4>
+        <span class="athanor-glyph" aria-hidden="true">&#9672;</span>
+      </div>
+      <div class="athanor-rule" aria-hidden="true"></div>
       <p>
         This repository is an esoteric diagnostic tool. The Pleromic Root Code cannot be downloaded into a state of mechanical sleep. Extract the somatic blueprints, disconnect from the Archontic network, and execute the internal friction manually.
       </p>
@@ -63,7 +68,7 @@
   .anu-site-footer {
     background: var(--anu-void-card, #09101d);
     border-top: 1px solid var(--anu-gold-dim, rgba(198, 166, 100, 0.15));
-    padding: 60px 0 30px;
+    padding: 70px 0 35px;
     margin-top: auto;
   }
 
@@ -73,26 +78,65 @@
     gap: 48px;
   }
 
+  /* Centered Crucible Branding Block */
   .anu-footer-branding {
-    max-width: 680px;
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .athanor-seal {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 4px;
+  }
+
+  .athanor-glyph {
+    color: var(--anu-gold, #c5a059);
+    font-size: 0.7rem;
+    opacity: 0.75;
+    text-shadow: 0 0 8px var(--anu-gold-glow, rgba(198, 166, 100, 0.4));
   }
 
   .anu-footer-branding h4 {
     font-family: var(--font-headers, 'Cinzel', serif);
-    font-size: 1.15rem;
-    letter-spacing: 2px;
+    font-size: clamp(1.2rem, 2.5vw, 1.45rem);
+    letter-spacing: 4px;
     text-transform: uppercase;
     color: var(--anu-gold, #c5a059);
-    margin: 0 0 12px 0;
+    margin: 0;
+    text-shadow: 0 0 16px rgba(198, 166, 100, 0.35);
+  }
+
+  .athanor-rule {
+    width: 140px;
+    height: 1px;
+    margin: 14px auto 20px;
+    background: linear-gradient(
+      90deg, 
+      transparent 0%, 
+      var(--anu-gold, #c5a059) 50%, 
+      transparent 100%
+    );
+    opacity: 0.8;
   }
 
   .anu-footer-branding p {
-    color: var(--anu-silver, #a8b2c1);
-    font-size: 0.9rem;
-    line-height: 1.75;
+    color: var(--anu-parchment, #e6ded0);
+    opacity: 0.88;
+    font-family: var(--font-body, 'Montserrat', sans-serif);
+    font-size: clamp(0.92rem, 1.8vw, 1rem);
+    line-height: 1.85;
+    letter-spacing: 0.3px;
     margin: 0;
+    max-width: 62ch;
   }
 
+  /* Navigation Grid */
   .anu-footer-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -172,6 +216,7 @@
     color: var(--anu-parchment, #e6ded0);
   }
 
+  /* Bottom Metadata Bar */
   .anu-footer-copyright {
     display: flex;
     justify-content: space-between;
@@ -193,7 +238,7 @@
 
   @media (max-width: 640px) {
     .anu-site-footer {
-      padding: 40px 0 24px;
+      padding: 50px 0 24px;
     }
 
     .anu-footer-container {
