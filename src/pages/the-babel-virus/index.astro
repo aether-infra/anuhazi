@@ -4,7 +4,7 @@ import Layout from '../../layouts/Layout.astro';
 ---
 
 <Layout 
-  title="Hub II: The Babel Virus | Anuhazi"
+  title="Hub II: The Babel Virus"
   description="Map the Archontic interference. Decode the Tower of Babel as an engineered software wipe designed to fracture the Mother-Tongue, instantiate binary phonetics, and weaponize the ambient acoustic grid."
 >
   <div class="site-wrapper section theme-void" style="padding-top: 20px; padding-bottom: 80px;">
@@ -28,7 +28,7 @@ import Layout from '../../layouts/Layout.astro';
     </header>
 
     <!-- Context / Callout Aside (The Linguistic Hijack) -->
-    <section class="reveal reveal-delay-1 central-aside-wrapper">
+    <section class="anu-container reveal reveal-delay-1 central-aside-wrapper">
       <aside class="anu-terminal anu-terminal-copper">
         <h2>The Linguistic Hijack</h2>
         <p>
@@ -46,7 +46,7 @@ import Layout from '../../layouts/Layout.astro';
       <!-- Node 2.1 -->
       <article class="anu-card anu-card-copper">
         <span class="anu-eyebrow eyebrow-copper">Node 2.1</span>
-        <h3>The Software Wipe</h3>
+        <h3 class="node-title">The Software Wipe</h3>
         <p class="card-text">
           Decode the historical "Tower of Babel" as an engineered cybernetic event. Analyze the deliberate fragmentation of the Anuhazi root code into disconnected tribal dialects designed to prevent planetary synchronization.
         </p>
@@ -56,7 +56,7 @@ import Layout from '../../layouts/Layout.astro';
       <!-- Node 2.2 -->
       <article class="anu-card anu-card-copper">
         <span class="anu-eyebrow eyebrow-copper">Node 2.2</span>
-        <h3>Binary Phonetics</h3>
+        <h3 class="node-title">Binary Phonetics</h3>
         <p class="card-text">
           Examine the conflict matrix. How modern terrestrial languages are structurally coded for duality, opposition, and separation, actively generating the thermodynamic loosh harvested by the Archons.
         </p>
@@ -66,7 +66,7 @@ import Layout from '../../layouts/Layout.astro';
       <!-- Node 2.3 -->
       <article class="anu-card anu-card-copper">
         <span class="anu-eyebrow eyebrow-copper">Node 2.3</span>
-        <h3>Ambient Weaponization</h3>
+        <h3 class="node-title">Ambient Weaponization</h3>
         <p class="card-text">
           Diagnose the local environment. Analyze modern media, commercial music, and political rhetoric as localized static designed to keep the human nervous system locked in fight-or-flight processing.
         </p>
@@ -75,15 +75,70 @@ import Layout from '../../layouts/Layout.astro';
 
     </div>
 
-    <hr class="anu-divider divider-copper central-divider reveal reveal-delay-3" />
+    <!-- Divider (Bounded) -->
+    <div class="anu-container reveal reveal-delay-3">
+      <hr class="anu-divider divider-copper central-divider" />
+    </div>
 
     <!-- Hub Transit Link (Reconciling Force) -->
-    <nav class="reveal reveal-delay-3 anu-hub-transition">
-      <span class="anu-eyebrow eyebrow-gold">The Holy-Reconciling Force Awaits</span>
-      <a href="/wave-genetics/" class="anu-btn anu-btn-ghost">
-        Engage Hub III: Wave Genetics &rarr;
-      </a>
+    <nav class="anu-container reveal reveal-delay-3">
+      <div class="anu-hub-transition">
+        <span class="anu-eyebrow eyebrow-gold">The Holy-Reconciling Force Awaits</span>
+        <a href="/wave-genetics/" class="anu-btn anu-btn-ghost">
+          Engage Hub III: Wave Genetics &rarr;
+        </a>
+      </div>
     </nav>
 
   </div>
 </Layout>
+
+<style>
+  /* Baseline alignment for card titles across 2-line and 3-line wraps */
+  .node-title {
+    min-height: 4rem;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  /* Grid spacing cushion */
+  .grid-spacing-bottom {
+    margin-bottom: 40px;
+  }
+
+  /* Terminal inner paragraph reset */
+  .spacing-bottom-none {
+    margin-bottom: 0;
+  }
+
+  /* Bottom transit bar flex alignment */
+  .anu-hub-transition {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 10px;
+  }
+
+  .anu-hub-transition .anu-eyebrow {
+    margin-bottom: 0;
+  }
+
+  /* Responsive stacking for smaller screens */
+  @media (max-width: 768px) {
+    .node-title {
+      min-height: auto;
+    }
+
+    .anu-hub-transition {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    .anu-hub-transition .anu-btn {
+      width: 100%;
+    }
+  }
+</style>
