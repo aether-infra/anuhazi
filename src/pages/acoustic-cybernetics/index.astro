@@ -27,7 +27,7 @@ import Layout from '../../layouts/Layout.astro';
     </header>
 
     <!-- Context / Callout Aside (Thermodynamic Engine) -->
-    <section class="reveal reveal-delay-1 central-aside-wrapper">
+    <section class="anu-container reveal reveal-delay-1 central-aside-wrapper">
       <aside class="anu-terminal anu-terminal-copper">
         <h2>The Thermodynamic Rendering Engine</h2>
         <p>
@@ -45,7 +45,7 @@ import Layout from '../../layouts/Layout.astro';
       <!-- Node 1.1 -->
       <article class="anu-card anu-card-gold">
         <span class="anu-eyebrow eyebrow-gold">Node 1.1</span>
-        <h3>The Geometry of the Logos</h3>
+        <h3 class="node-title">The Geometry of the Logos</h3>
         <p class="card-text">
           Deconstruct the "Word of God" as active thermodynamic engineering. Analyze Hans Jenny's CymaScope data to understand how specific acoustic frequencies instantly structure matter.
         </p>
@@ -55,7 +55,7 @@ import Layout from '../../layouts/Layout.astro';
       <!-- Node 1.2 -->
       <article class="anu-card anu-card-gold">
         <span class="anu-eyebrow eyebrow-gold">Node 1.2</span>
-        <h3>Scalar Mechanics &amp; The Grid</h3>
+        <h3 class="node-title">Scalar Mechanics &amp; The Grid</h3>
         <p class="card-text">
           Examine the underlying template of the Kenoma. Discover how standing scalar waves form the invisible scaffolding (the Kathara Grid) upon which all physical reality coagulates.
         </p>
@@ -65,7 +65,7 @@ import Layout from '../../layouts/Layout.astro';
       <!-- Node 1.3 -->
       <article class="anu-card anu-card-gold">
         <span class="anu-eyebrow eyebrow-gold">Node 1.3</span>
-        <h3>The Anuhazi Cipher</h3>
+        <h3 class="node-title">The Anuhazi Cipher</h3>
         <p class="card-text">
           Define the "Light-Language" of the Master Architects. Decode the non-linear, high-voltage tonal map that perfectly mirrors the unified frequencies of the Divine Source.
         </p>
@@ -74,15 +74,70 @@ import Layout from '../../layouts/Layout.astro';
 
     </div>
 
-    <hr class="anu-divider reveal reveal-delay-3 central-divider" />
+    <!-- Divider (Bounded) -->
+    <div class="anu-container reveal reveal-delay-3">
+      <hr class="anu-divider central-divider" />
+    </div>
 
     <!-- Hub Transit Link -->
-    <nav class="reveal reveal-delay-3 anu-hub-transition">
-      <span class="anu-eyebrow eyebrow-copper">The Holy-Denying Force Awaits</span>
-      <a href="/the-babel-virus/" class="anu-btn anu-btn-ghost-copper">
-        Engage Hub II: The Babel Virus &rarr;
-      </a>
+    <nav class="anu-container reveal reveal-delay-3">
+      <div class="anu-hub-transition">
+        <span class="anu-eyebrow eyebrow-copper">The Holy-Denying Force Awaits</span>
+        <a href="/the-babel-virus/" class="anu-btn anu-btn-ghost-copper">
+          Engage Hub II: The Babel Virus &rarr;
+        </a>
+      </div>
     </nav>
 
   </div>
 </Layout>
+
+<style>
+  /* Baseline alignment for card titles across 2-line and 3-line wraps */
+  .node-title {
+    min-height: 4rem;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  /* Grid spacing cushion */
+  .grid-spacing-bottom {
+    margin-bottom: 40px;
+  }
+
+  /* Terminal inner paragraph reset */
+  .spacing-bottom-none {
+    margin-bottom: 0;
+  }
+
+  /* Bottom transit bar flex alignment */
+  .anu-hub-transition {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 10px;
+  }
+
+  .anu-hub-transition .anu-eyebrow {
+    margin-bottom: 0;
+  }
+
+  /* Responsive stacking for smaller screens */
+  @media (max-width: 768px) {
+    .node-title {
+      min-height: auto;
+    }
+
+    .anu-hub-transition {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    .anu-hub-transition .anu-btn {
+      width: 100%;
+    }
+  }
+</style>
