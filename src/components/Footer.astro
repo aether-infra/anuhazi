@@ -16,18 +16,18 @@
     <!-- Navigation Column Grid -->
     <div class="anu-footer-grid">
       
-      <!-- Column 1: Core Matrix -->
+      <!-- Column 1: Core Matrix (Gold) -->
       <div class="anu-footer-column">
         <span class="anu-footer-title title-gold">The Core Matrix</span>
         <ul class="anu-footer-list">
-          <li><a href="/acoustic-cybernetics/" class="anu-footer-link link-hover-parchment">Hub I: Acoustic Cybernetics</a></li>
+          <li><a href="/acoustic-cybernetics/" class="anu-footer-link link-hover-gold">Hub I: Acoustic Cybernetics</a></li>
           <li><a href="/the-babel-virus/" class="anu-footer-link link-hover-copper">Hub II: The Babel Virus</a></li>
-          <li><a href="/wave-genetics/" class="anu-footer-link link-hover-parchment">Hub III: Wave Genetics</a></li>
+          <li><a href="/wave-genetics/" class="anu-footer-link link-hover-gold">Hub III: Wave Genetics</a></li>
           <li><a href="/somatic-praxis/" class="anu-footer-link link-hover-gold">Hub IV: Somatic Praxis</a></li>
         </ul>
       </div>
 
-      <!-- Column 2: Deep-Mind Archive -->
+      <!-- Column 2: Deep-Mind Archive (Silver) -->
       <div class="anu-footer-column">
         <span class="anu-footer-title title-silver">Deep-Mind Archive</span>
         <ul class="anu-footer-list">
@@ -38,20 +38,22 @@
         </ul>
       </div>
 
-      <!-- Column 3: Execution Protocols -->
+      <!-- Column 3: Execution Protocols (Copper / Parchment) -->
       <div class="anu-footer-column">
-        <span class="anu-footer-title title-parchment">Execution Protocols</span>
+        <span class="anu-footer-title title-copper">Execution Protocols</span>
         <ul class="anu-footer-list">
           <li><a href="/the-pleromic-extraction/" class="anu-footer-link-gold link-hover-parchment">The Pleromic Extraction</a></li>
+          <li><a href="https://github.com/aether-infra/anuhazi" target="_blank" rel="noopener noreferrer" class="anu-footer-link link-hover-parchment">Sovereign Source (GitHub)</a></li>
           <li><a href="/" class="anu-footer-link link-hover-parchment">Return to Grid (Home)</a></li>
         </ul>
       </div>
 
     </div>
     
-    <!-- Bottom License / Copyright Info -->
+    <!-- Bottom Sovereign Metadata -->
     <div class="anu-footer-copyright">
-      <span>&copy; 2026 Anuhazi.com &middot; All Rights Reserved.</span>
+      <span>Non-Commercial Conduit &middot; No Rights Reserved &middot; 2026</span>
+      <span class="footer-status-pill">Static Edge // Cloudflare</span>
     </div>
 
   </div>
@@ -60,7 +62,7 @@
 <style>
   .anu-site-footer {
     background: var(--anu-void-card, #09101d);
-    border-top: 1px solid rgba(197, 160, 89, 0.2);
+    border-top: 1px solid var(--anu-gold-dim, rgba(198, 166, 100, 0.15));
     padding: 60px 0 30px;
     margin-top: auto;
   }
@@ -72,11 +74,11 @@
   }
 
   .anu-footer-branding {
-    max-width: 640px;
+    max-width: 680px;
   }
 
   .anu-footer-branding h4 {
-    font-family: var(--font-heading, 'Cinzel', serif);
+    font-family: var(--font-headers, 'Cinzel', serif);
     font-size: 1.15rem;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -87,7 +89,7 @@
   .anu-footer-branding p {
     color: var(--anu-silver, #a8b2c1);
     font-size: 0.9rem;
-    line-height: 1.7;
+    line-height: 1.75;
     margin: 0;
   }
 
@@ -95,8 +97,8 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 36px 24px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid rgba(168, 178, 193, 0.1);
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--anu-silver-dim, rgba(176, 184, 192, 0.1));
   }
 
   .anu-footer-column {
@@ -106,7 +108,7 @@
   }
 
   .anu-footer-title {
-    font-family: var(--font-heading, 'Cinzel', serif);
+    font-family: var(--font-headers, 'Cinzel', serif);
     font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 2px;
@@ -121,8 +123,8 @@
     color: var(--anu-silver, #a8b2c1);
   }
 
-  .title-parchment {
-    color: var(--anu-parchment, #e6ded0);
+  .title-copper {
+    color: var(--anu-copper, #c97a6a);
   }
 
   .anu-footer-list {
@@ -139,7 +141,7 @@
     text-decoration: none;
     font-size: 0.85rem;
     letter-spacing: 0.5px;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
   }
 
   .anu-footer-link {
@@ -148,18 +150,22 @@
 
   .anu-footer-link-gold {
     color: var(--anu-gold, #c5a059);
+    font-weight: 500;
   }
 
   .link-hover-gold:hover {
     color: var(--anu-gold, #c5a059);
+    text-shadow: 0 0 8px var(--anu-gold-glow, rgba(198, 166, 100, 0.4));
   }
 
   .link-hover-copper:hover {
-    color: var(--anu-copper, #c87d55);
+    color: var(--anu-copper, #c97a6a);
+    text-shadow: 0 0 8px var(--anu-copper-glow, rgba(201, 122, 106, 0.4));
   }
 
   .link-hover-silver:hover {
     color: #ffffff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
   }
 
   .link-hover-parchment:hover {
@@ -170,10 +176,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
     font-size: 0.75rem;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     color: rgba(168, 178, 193, 0.6);
     text-transform: uppercase;
+  }
+
+  .footer-status-pill {
+    color: var(--anu-muted, #888888);
+    font-family: var(--font-headers, 'Cinzel', serif);
+    font-size: 0.7rem;
+    letter-spacing: 2px;
   }
 
   @media (max-width: 640px) {
@@ -188,6 +203,12 @@
     .anu-footer-grid {
       grid-template-columns: 1fr;
       gap: 28px;
+    }
+
+    .anu-footer-copyright {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
     }
   }
 </style>
