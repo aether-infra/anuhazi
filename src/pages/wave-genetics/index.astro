@@ -28,7 +28,7 @@ import Layout from '../../layouts/Layout.astro';
     </header>
 
     <!-- Context / Callout Aside (The Hardware Synthesis) -->
-    <section class="reveal reveal-delay-1 central-aside-wrapper">
+    <section class="anu-container reveal reveal-delay-1 central-aside-wrapper">
       <aside class="anu-terminal anu-terminal-gold">
         <h2>The Hardware Synthesis</h2>
         <p>
@@ -46,7 +46,7 @@ import Layout from '../../layouts/Layout.astro';
       <!-- Node 3.1 -->
       <article class="anu-card anu-card-gold">
         <span class="anu-eyebrow eyebrow-gold">Node 3.1</span>
-        <h3>The Holographic Antenna</h3>
+        <h3 class="node-title">The Holographic Antenna</h3>
         <p class="card-text">
           Deconstruct the chemical hallucination. Explore how the 12-strand DNA functions as a biological transceiver, reading and projecting scalar standing waves to interface with the Kathara grid.
         </p>
@@ -56,7 +56,7 @@ import Layout from '../../layouts/Layout.astro';
       <!-- Node 3.2 -->
       <article class="anu-card anu-card-gold">
         <span class="anu-eyebrow eyebrow-gold">Node 3.2</span>
-        <h3>Epigenetic Linguistics</h3>
+        <h3 class="node-title">Epigenetic Linguistics</h3>
         <p class="card-text">
           Analyze Dr. Peter Gariaev's laboratory data. Discover how spoken words and acoustic frequencies act as a literal laser, rewriting the genetic code and healing or mutating the biological hardware.
         </p>
@@ -66,7 +66,7 @@ import Layout from '../../layouts/Layout.astro';
       <!-- Node 3.3 -->
       <article class="anu-card anu-card-gold">
         <span class="anu-eyebrow eyebrow-gold">Node 3.3</span>
-        <h3>The Phantom Matrix</h3>
+        <h3 class="node-title">The Phantom Matrix</h3>
         <p class="card-text">
           Examine the Phantom DNA Effect. Understand how the energetic blueprint of the hardware remains in the vacuum even when physical matter is removed, proving the primacy of the wave.
         </p>
@@ -75,15 +75,70 @@ import Layout from '../../layouts/Layout.astro';
 
     </div>
 
-    <hr class="anu-divider central-divider reveal reveal-delay-3" />
+    <!-- Divider (Bounded) -->
+    <div class="anu-container reveal reveal-delay-3">
+      <hr class="anu-divider central-divider" />
+    </div>
 
     <!-- Hub Transit Link (Reconciling Force) -->
-    <nav class="reveal reveal-delay-3 anu-hub-transition">
-      <span class="anu-eyebrow eyebrow-gold">The First Conscious Shock Awaits</span>
-      <a href="/somatic-praxis/" class="anu-btn anu-btn-ghost">
-        Engage Hub IV: Somatic Praxis &rarr;
-      </a>
+    <nav class="anu-container reveal reveal-delay-3">
+      <div class="anu-hub-transition">
+        <span class="anu-eyebrow eyebrow-gold">The First Conscious Shock Awaits</span>
+        <a href="/somatic-praxis/" class="anu-btn anu-btn-ghost">
+          Engage Hub IV: Somatic Praxis &rarr;
+        </a>
+      </div>
     </nav>
 
   </div>
 </Layout>
+
+<style>
+  /* Baseline alignment for card titles across differing line wraps */
+  .node-title {
+    min-height: 4rem;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  /* Grid spacing cushion */
+  .grid-spacing-bottom {
+    margin-bottom: 40px;
+  }
+
+  /* Terminal inner paragraph reset */
+  .spacing-bottom-none {
+    margin-bottom: 0;
+  }
+
+  /* Bottom transit bar flex alignment */
+  .anu-hub-transition {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 10px;
+  }
+
+  .anu-hub-transition .anu-eyebrow {
+    margin-bottom: 0;
+  }
+
+  /* Responsive stacking for smaller screens */
+  @media (max-width: 768px) {
+    .node-title {
+      min-height: auto;
+    }
+
+    .anu-hub-transition {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    .anu-hub-transition .anu-btn {
+      width: 100%;
+    }
+  }
+</style>
